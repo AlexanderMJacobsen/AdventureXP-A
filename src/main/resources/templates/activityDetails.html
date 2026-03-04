@@ -12,7 +12,7 @@
         <!-- Top section -->
         <div class="top-section">
             <div class="top-left">
-                <img>Img Placeholder<img/>
+                <img th:src="@{/img/win.png}" alt="winning" style="width: 100px; height: 125px;" />
             </div>
             <div class="top-right">
                 <div class="activity-info">
@@ -40,7 +40,33 @@
                 </ul>
             </div>
             <div class="bottom-right">
-                <span>TABEL</span>
+                <table>
+                    <tr>
+                        <th>Udstyr</th>
+                        <th>Antal</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Paintball Gun</td>
+                        <td>20stk</td>
+                        <td>Ledig</td>
+                    </tr>
+                    <tr>
+                        <td>Hjelme</td>
+                        <td>20stk</td>
+                        <td>Ledig</td>
+                    </tr>
+                    <tr>
+                        <td>Veste</td>
+                        <td>20stk</td>
+                        <td>Booked</td>
+                    </tr>
+                    <tr>
+                        <td>Test</td>
+                        <td>15stk</td>
+                        <td>Reparation</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

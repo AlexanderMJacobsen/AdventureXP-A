@@ -14,7 +14,6 @@ public class ActivityDetailsController {
 
     @GetMapping("/activity-details")
     public String activityDetails(Model model) {
-        model.addAttribute("getEquipment",equipmentService.getEquipment(1L));
         return "activityDetails";
 
     }
