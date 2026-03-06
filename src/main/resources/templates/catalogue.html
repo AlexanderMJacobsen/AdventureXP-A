@@ -10,6 +10,8 @@
 <body>
 
 	<!-- HEADER -->
+	<header th:replace="~{fragments/header :: header-element}"></header>
+
 
 	<!--ACTIVITIES WRAPPER-->
 	<div class="index_activities">
@@ -21,13 +23,15 @@
 
 				<h1 th:text="${activity.title}">Aktivitetsnavn</h1>
 
-				<img th:src="@{/images/Sumo.jpg}" alt="Aktivitet billede" />
+				<div class="activity_img">
+					<img th:src="@{/images/Sumo.jpg}" alt="Aktivitet billede" />
+				</div>
 
 				<div class="buttons">
 					<button type="button" class="see_more_btn"
-                            onclick="location.href='/activities/activityDetails'">Se mere</button>
+                            onclick="location.href='/activity-details'">Se mere</button>
 					<button type="button" class="edit_btn"
-                            onclick="location.href='/activities/activityEdit'">Rediger</button>
+                            onclick="location.href='/activityEdit'">Rediger</button>
 				</div>
 			</div>
 
@@ -43,7 +47,7 @@
                 </svg>
             </div>
 
-			<div>
+			<div class="activity_btn">
 				<button type="button" id="add_activity_btn"
 					onclick="location.href='/activities/create'">Tilføj</button>
 			</div>
