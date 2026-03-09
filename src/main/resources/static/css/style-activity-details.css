@@ -83,6 +83,7 @@
     background-color: white;
     position: static;
     width: auto;
+    font-family: inherit;
 }
 
 .bottom-left ul li {

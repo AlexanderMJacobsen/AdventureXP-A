@@ -18,7 +18,7 @@ public class EquipmentService {
     public Equipment getEquipmentById(Long id) {
         Equipment equipment = equipmentRepository.findById(id).orElseThrow(() -> new RuntimeException("Equipment not found with id: " + id));
         return equipment;
-    }  
+    }
 
     public Equipment createEquipment(Equipment equipment) {
         return equipmentRepository.save(equipment);
