@@ -2,14 +2,22 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin: 0 25px
 }
 
 
-[name="Activity-detail"],
-[name="Activity-requirements"]{
-    min-height: 75px;
+.form-design {
+    display: flex;
+    flex-direction: row;
 }
 
-[name="Activity-name"]{
+
+
+.box{
+    min-height: 125px;
+}
+
+#activityName{
     margin-bottom: 10px;
 }
+
