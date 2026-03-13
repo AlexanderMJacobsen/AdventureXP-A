@@ -1,0 +1,23 @@
+.activity-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 25px
+}
+
+
+.form-design {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.box{
+    min-height: 125px;
+}
+
+#activityName{
+    margin-bottom: 10px;
+}
+

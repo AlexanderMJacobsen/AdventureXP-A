@@ -5,6 +5,8 @@ import com.xpgruppe.AdventureXP.model.Equipment;
 import com.xpgruppe.AdventureXP.model.EquipmentStatus;
 import com.xpgruppe.AdventureXP.repository.EquipmentRepository;
 
+import java.util.List;
+
 
 @Service
 public class EquipmentService {
@@ -46,5 +48,11 @@ public class EquipmentService {
 		equipmentRepository.save(equipment);
 
 	}
+
+    public List<Equipment> getAll(){
+        return equipmentRepository.findAll();
+    }
+
+
 
 }

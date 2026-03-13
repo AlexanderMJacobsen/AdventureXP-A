@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="dk" xmlns:th="https://www.thymeleaf.org/">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRUD</title>
+    <link rel="stylesheet" th:href="@{/css/style-activity-details.css}" />
+    <link rel="stylesheet" th:href="@{/css/crud-activities.css}" />
+  </head>
+  <body>
+    <header th:replace="~{fragments/header :: header-element}"></header>
+
+    <div class="page-wrapper">
+      <!-- Top section -->
+      <div class="top-section">
+        <div class="top-left">
+          <img
+            th:src="@{/img/win.png}"
+            alt="winning"
+            style="width: 100px; height: 125px"
+          />
+        </div>
+
+        <div class="top-right">
+          <form
+            class="form-design"
+            th:action="@{/CRUD/activity/create}"
+            th:object="${activity}"
+            method="post"
+          >
+            <div class="activity-info">
+              <input
+                id="activityName"
+                type="text"
+                
+                placeholder="Indsæt aktivitets navn"
+                th:field="*{activityName}"
+              />
+              <textarea
+                class="box"
+            
+                placeholder="Indsæt aktivitets detaljer"
+                th:field="*{activityDetail}"
+              ></textarea>
+            </div>
+
+            <div class="activity-info">
+              <h2>Krav</h2>
+              <textarea
+                class="box"
+                name="Activity-requirements"
+                placeholder="Indsæt kravs detaljer"
+                th:field="*{activityRequimentDetail}"
+              ></textarea>
+            </div>
+
+            <button class="rediger-btn" name="action" value="save" type="submit">Gem</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom section -->
+      <div class="bottom-section">
+        <div class="bottom-left">
+          <div class="udstyr-header">
+            <h2>Udstyr</h2>
+          </div>
+
+          <form
+            th:action="@{/CRUD/activity/add-equipment}"
+            th:object="${activity}"
+            method="post"
+          >
+            <input type="hidden" th:field="*{activityName}" />
+            <input type="hidden" th:field="*{activityDetail}" />
+            <input type="hidden" th:field="*{activityRequimentDetail}" />
+
+            <select th:field="*{selectedEquipmentId}">
+              <option value="" disabled selected>Vælg udstyr</option>
+              <option
+                th:each="equipment : ${equipments}"
+                th:value="${equipment.id}"
+                th:text="${equipment.name}"
+              ></option>
+            </select>
+
+            <button type="submit">Tilføj</button>
+          </form>
+
+          <ul>
+            <li th:each="equipment : ${activity.equipmentList}">
+              <span th:text="${equipment.name}"></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-right">
+          <table></table>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
